@@ -37,12 +37,12 @@ pipeline {
                    sh 'pwd'
                    sh 'npm test'
                    sh 'echo "CI finished"'
-            }
+                   }
+               }
                stage ('final message') {
                    steps {
                    sh 'echo "CI finished"'
                    }
                }
-        }
     }
 }
