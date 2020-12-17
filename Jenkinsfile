@@ -19,6 +19,7 @@ pipeline {
              stage('Install Dependencies'){
                  steps {
                      sh 'echo "hola"'
+                     sh 'npm install'
                      sh 'npm install -D esm'
                      sh 'npm install babel-preset-es2015 --save-dev'
                      sh 'npm --version'
