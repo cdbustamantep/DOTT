@@ -1,27 +1,14 @@
 pipeline {
     agent any
-    environment { 
-        EXECUTE = 'true'
-    }
       tools {nodejs "node"}
     
          stages {
-             stage('Test1') {
+             stage('Welcome') {
                  steps {
                      sh 'node --version'
+                     echo ' "The CI process will start now" '
                  }
-             }
-                     
-              stage('Sonarcloud'){
-                  steps {
-                      //sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
-                      //sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
-                      //sh 'export PATH=$PATH:$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'                      
-                      //sh 'ls $HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'
-                      sh '$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=cdbustamantep -Dsonar.projectKey=cdbustamantep_DOTT -Dsonar.login=c1ab91ba90942f53d3aa020a6ba87753d7f23a1e'
-                  }
-                }
-                  
+             }               
              stage('Cloning Git') {
                 steps {
                     git 'https://github.com/cdbustamantep/DOTT'
@@ -29,17 +16,23 @@ pipeline {
              }
              stage('Install Dependencies'){
                  steps {
-                     sh 'echo "hola"'
+                     sh 'echo "In this section we will interpretate the code using npm"'
                      sh 'npm install'
-                     sh 'npm install -D esm'
-                     sh 'npm install babel-preset-es2015 --save-dev'
+                     sh 'npm install -D esm'            // -D --save-dev is used to save the package for development purpose. Example: unit tests, minification. esm ECMAScript module loader
+                     sh 'npm install babel-preset-es2015 --save-dev' //es2015 commands are used in the code, due to this we nedd to use this version
                      sh 'npm --version'
                 }
-            }
-               stage ('Test2') {
-                   when {
-                       expression { env.EXECUTE == 'true' }
+             }
+             stage('Sonarcloud'){
+                  steps {
+                      //sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
+                      //sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
+                      //sh 'export PATH=$PATH:$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'                      
+                      //sh 'ls $HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'
+                      sh '$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=cdbustamantep -Dsonar.projectKey=cdbustamantep_DOTT -Dsonar.login=c1ab91ba90942f53d3aa020a6ba87753d7f23a1e'
                   }
+               }
+               stage ('Test2') {
                    steps {
                    sh 'pwd'
                    sh 'npm test'
