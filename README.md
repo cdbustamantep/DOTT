@@ -77,5 +77,5 @@ curl localhost/ip-validation?value=255.255.0.0
 - [ ] Information Flow between different technologies
 
 ### Task Organization
-- [ ] Kanban (Trello.com)
+- [ ] Kanban (https://trello.com/b/8N9br3VG/node-devopsacademy-christian-bustamante)
 
