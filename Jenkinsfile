@@ -34,9 +34,19 @@ pipeline {
                }
                stage ('Unit Test') {
                    steps {
-                   sh 'pwd'
-                   sh 'npm test'
-                   sh 'echo "CI finished"'
+                       
+                       script {
+                           try {
+                                 sh 'pwd'
+                                 sh 'npm test'
+                           }
+                           catch (exc) {
+                                echo 'Unit tests failed'
+                           }
+                       }
+                       
+                   //sh 'pwd'
+                   //sh 'npm test'
                    }
                }
                stage ('final message') {
