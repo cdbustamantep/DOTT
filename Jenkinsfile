@@ -14,7 +14,8 @@ pipeline {
                      
               stage('Sonarcloud'){
                   steps {
-                      sh 'echo $PATH'
+                      sh 'echo $HOME'
+                      //sh 'export PATH=$PATH:/sonar/sonar-scanner-4.4.0.2170-linux/bin'
                      //sh 'sonar-scanner'
                   }
                 }
