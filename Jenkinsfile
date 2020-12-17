@@ -15,6 +15,7 @@ pipeline {
               stage('Sonarcloud'){
                   steps {
                      sh 'sonar-scanner'
+                  }
                 }
                   
              stage('Cloning Git') {
@@ -30,8 +31,6 @@ pipeline {
                      sh 'npm install babel-preset-es2015 --save-dev'
                      sh 'npm --version'
                 }
-              }
-
             }
                stage ('Test2') {
                    when {
