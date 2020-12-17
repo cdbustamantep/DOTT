@@ -18,7 +18,7 @@ pipeline {
                       //sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
                       //sh 'export PATH=$PATH:$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'                      
                       //sh 'ls $HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'
-                      sh '$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/binsonar-scanner'
+                      sh '$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner'
                   }
                 }
                   
