@@ -14,7 +14,10 @@ pipeline {
                      
               stage('Sonarcloud'){
                   steps {
-                      sh 'echo $HOME'
+                      sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
+                      sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
+                      
+                      sh 'pwd'
                       //sh 'export PATH=$PATH:/sonar/sonar-scanner-4.4.0.2170-linux/bin'
                      //sh 'sonar-scanner'
                   }
