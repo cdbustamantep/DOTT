@@ -11,6 +11,12 @@ pipeline {
                      sh 'node --version'
                  }
              }
+                     
+              stage('Sonarcloud'){
+                  steps {
+                     sh 'sonar-scanner'
+                }
+                  
              stage('Cloning Git') {
                 steps {
                     git 'https://github.com/cdbustamantep/DOTT'
@@ -25,11 +31,7 @@ pipeline {
                      sh 'npm --version'
                 }
               }
-        
-              stage('Sonarcloud'){
-                  steps {
-                     sh 'echo "Sonar integration"'
-                }
+
             }
                stage ('Test2') {
                    when {
