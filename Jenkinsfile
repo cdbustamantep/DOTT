@@ -27,7 +27,7 @@ pipeline {
         
               stage('Sonarcloud'){
                   steps {
-                     sh 'echo "Sonarstage"'
+                     sh 'echo "Sonarstage pr"'
                 }
             }
                stage ('Test2') {
