@@ -25,10 +25,10 @@ pipeline {
              }
              stage('Sonarcloud'){
                   steps {
-                      sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
-                      sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
-                      sh 'export PATH=$PATH:$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'                      
-                      sh 'ls $HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'
+                      //sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
+                      //sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
+                      //sh 'export PATH=$PATH:$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'                      
+                      //sh 'ls $HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'
                       sh '$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=cdbustamantep -Dsonar.projectKey=cdbustamantep_DOTT -Dsonar.login=c1ab91ba90942f53d3aa020a6ba87753d7f23a1e'
                   }
                }
