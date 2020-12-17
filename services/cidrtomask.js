@@ -3,4 +3,4 @@ export const cidrToMaskFunction = (value) => {
   return value;
 
 }
-vnzjkv;xcvn;//prueba de falla de calidad para sonarcloud
+
