@@ -28,7 +28,7 @@ pipeline {
         
               stage('Sonarcloud'){
                   steps {
-                     sh 'echo "Sonarstage pgr"'
+                     sh 'echo "Sonar integration"'
                 }
             }
                stage ('Test2') {
