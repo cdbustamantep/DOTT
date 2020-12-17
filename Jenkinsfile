@@ -41,7 +41,7 @@ pipeline {
                                  sh 'npm test'
                            }
                            catch (exc) {
-                                echo 'Unit tests failed'
+                                echo 'Some tests are failing, please check the log'
                            }
                        }
                        
