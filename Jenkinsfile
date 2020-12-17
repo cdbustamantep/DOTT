@@ -14,7 +14,8 @@ pipeline {
                      
               stage('Sonarcloud'){
                   steps {
-                     sh 'sonar-scanner'
+                      sh 'echo $PATH'
+                     //sh 'sonar-scanner'
                   }
                 }
                   
