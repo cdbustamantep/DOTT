@@ -41,7 +41,8 @@ pipeline {
                stage ('final message') {
                    steps {
                    sh 'echo "CI finished"'
-            }
+                   }
+               }
         }
     }
 }
