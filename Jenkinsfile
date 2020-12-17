@@ -19,7 +19,7 @@ pipeline {
                       sh 'echo $HOME'
                       sh 'pwd'
                       sh 'export PATH=$PATH:$HOME/workspace/profin/sonar/sonar-scanner-4.4.0.2170-linux/bin'
-                      sh 'ls $HOME/workspace/profin/sonar/sonar-scanner-4.4.0.2170-linux/bin'
+                      sh 'ls $HOME/workspace/profin'
                       //sh 'sonar-scanner'
                   }
                 }
