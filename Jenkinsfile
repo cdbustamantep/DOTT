@@ -64,7 +64,7 @@ pipeline {
                
                stage ('final message') {
                    steps {
-                   sh 'echo "CI finished"'
+                   sh 'echo "CI finished :)"'
                    }
                }
     }
