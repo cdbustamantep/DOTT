@@ -70,7 +70,7 @@ pipeline {
                
                stage ('final message') {
                    steps {
-                   sh 'echo "CI finished ;) ACCENTURE"'
+                   sh 'echo "CI finished ;) ACCENTURE :)"'
                    sh 'echo "$HOME"'
                    }
                }
