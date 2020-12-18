@@ -52,11 +52,11 @@ pipeline {
                            def scannerHome = tool 'sonarqube1'
                           withSonarQubeEnv("sonarqube") {
                               sh "${tool("sonarqube1")}/bin/sonar-scanner \
+                                    -Dsonar.host.url=https://sonarcloud.io \
                                     -Dsonar.organization=cdbustamantep \
                                     -Dsonar.projectKey=cdbustamantep_DOTT \
                                     -Dsonar.login=c1ab91ba90942f53d3aa020a6ba87753d7f23a1e \
                                     -Dsonar.sources=. \
-                                    -Dsonar.host.url=https://sonarcloud.io \
                                     -Dsonar.javascript.lcov.reportPaths=$WORKSPACE/lcov.info \
                                     -Dsonar.javascript.lcov.reportPaths=$WORKSPACE/coverage/lcov.info"
                                      
