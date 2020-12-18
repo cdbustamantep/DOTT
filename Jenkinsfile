@@ -42,7 +42,7 @@ pipeline {
                }
              stage('Sonarcloud'){
                   steps {
-                      sh 'cp -r $HOME/workspace/profin/node_modules/npm/node_modules/mute-stream/coverage/lcov.info $HOME/workspace/profin/'
+                      //sh 'cp -r $HOME/workspace/profin/node_modules/npm/node_modules/mute-stream/coverage/lcov.info $HOME/workspace/profin/'
                       //sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
                       //sh 'unzip sonar-scanner-cli-4.4.0.2170-linux.zip'
                       //sh 'export PATH=$PATH:$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'                      
