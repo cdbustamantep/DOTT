@@ -59,9 +59,8 @@ pipeline {
                                     -Dsonar.projectKey=cdbustamantep_DOTT \
                                     -Dsonar.login=c1ab91ba90942f53d3aa020a6ba87753d7f23a1e \
                                     -Dsonar.javascript.lcov.reportPaths=$WORKSPACE/coverage/lcov.info \
-                                    -Dsonar.exclusions=coverage/** \ 
-                                    -Dsonar.sources=. "
-                                                                      
+                                    -Dsonar.exclusions=coverage/** \
+                                    -Dsonar.sources=. "                                    
                           }                       
                           
                       }
