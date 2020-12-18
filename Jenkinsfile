@@ -23,6 +23,23 @@ pipeline {
                      sh 'npm --version'
                 }
              }
+             stage ('Unit Test') {
+                   steps {
+                       
+                       script {
+                           try {
+                                 sh 'pwd'
+                                 sh 'npm test'
+                           }
+                           catch (exc) {
+                                echo 'Some tests are failing, please check the log'
+                           }
+                       }
+                       
+                   //sh 'pwd'
+                   //sh 'npm test'
+                   }
+               }
              stage('Sonarcloud'){
                   steps {
                       //sh 'wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip'
@@ -44,23 +61,7 @@ pipeline {
                   
                   }
                }
-               stage ('Unit Test') {
-                   steps {
-                       
-                       script {
-                           try {
-                                 sh 'pwd'
-                                 sh 'npm test'
-                           }
-                           catch (exc) {
-                                echo 'Some tests are failing, please check the log'
-                           }
-                       }
-                       
-                   //sh 'pwd'
-                   //sh 'npm test'
-                   }
-               }
+               
                stage ('final message') {
                    steps {
                    sh 'echo "CI finished"'
