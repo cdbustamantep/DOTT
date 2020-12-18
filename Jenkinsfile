@@ -31,9 +31,9 @@ pipeline {
                       //sh 'ls $HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin'
                       //sh '$HOME/workspace/profin/sonar-scanner-4.4.0.2170-linux/bin/sonar-scanner -Dsonar.host.url=https://sonarcloud.io -Dsonar.organization=cdbustamantep -Dsonar.projectKey=cdbustamantep_DOTT -Dsonar.login=c1ab91ba90942f53d3aa020a6ba87753d7f23a1e'
                       script {
-                           def scannerHome = tool 'SonarQubeScanner'
-                          withSonarQubeEnv(SonarCloud) {
-                              sh "${tool("SonarQubeScanner")}/bin/sonar-scanner \
+                           def scannerHome = tool 'SonarCloud'
+                          withSonarQubeEnv(SonarQubeScanner) {
+                              sh "${tool("SonarCloud")}/bin/sonar-scanner \
                                     -Dsonar.organization=cdbustamantep \
                                     -Dsonar.projectKey=cdbustamantep_DOTT \
                                     -Dsonar.sources=. \
