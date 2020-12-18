@@ -17,10 +17,10 @@ pipeline {
              stage('Install Dependencies'){
                  steps {
                      sh 'echo "In this section we will interpretate the code using npm"'
-                     sh 'npm install'
-                     sh 'npm install -D esm'            // -D --save-dev is used to save the package for development purpose. Example: unit tests, minification. esm ECMAScript module loader
-                     sh 'npm install babel-preset-es2015 --save-dev' //es2015 commands are used in the code, due to this we nedd to use this version
-                     sh 'npm --version'
+                     //sh 'npm install'
+                     //sh 'npm install -D esm'            // -D --save-dev is used to save the package for development purpose. Example: unit tests, minification. esm ECMAScript module loader
+                     //sh 'npm install babel-preset-es2015 --save-dev' //es2015 commands are used in the code, due to this we nedd to use this version
+                     sh 'npm install nyc --save-dev'
                 }
              }
              stage ('Unit Test') {
