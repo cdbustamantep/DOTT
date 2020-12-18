@@ -32,7 +32,7 @@ pipeline {
                                  sh 'npm test'
                            }
                            catch (exc) {
-                                echo 'Some tests are failing, please check the log'
+                                echo 'Some tests are failing, please check the log1'
                            }
                        }
                        
