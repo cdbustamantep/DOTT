@@ -54,8 +54,7 @@ pipeline {
                                     -Dsonar.organization=cdbustamantep \
                                     -Dsonar.projectKey=cdbustamantep_DOTT \
                                     -Dsonar.sources=. \
-                                    -Dsonar.host.url=https://sonarcloud.io \
-                                     echo $HOME"
+                                    -Dsonar.host.url=https://sonarcloud.io"
                                      
                                     //-Dsonar.javascript.lcov.reportPaths=$HOME/workspace/final_project_job/node_modules/npm/node_modules/mute-stream/coverage/lcov.info"
                           }                       
@@ -68,6 +67,7 @@ pipeline {
                stage ('final message') {
                    steps {
                    sh 'echo "CI finished :)"'
+                   sh 'echo "$HOME"'
                    }
                }
     }
