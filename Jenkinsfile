@@ -56,7 +56,8 @@ pipeline {
                                     -Dsonar.projectKey=cdbustamantep_DOTT \
                                     -Dsonar.sources=. \
                                     -Dsonar.host.url=https://sonarcloud.io \
-                                    -Dsonar.javascript.lcov.reportPaths=$WORKSPACE/lcov.info"
+                                    -Dsonar.javascript.lcov.reportPaths=$WORKSPACE/lcov.info \
+                                    -Dsonar.javascript.lcov.reportPaths=$WORKSPACE/coverage/lcov.info"
                                      
                                     
                           }                       
